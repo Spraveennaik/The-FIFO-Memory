@@ -1,0 +1,62 @@
+Title of Project:      FIFO Memory
+
+
+
+Types of Verilog codes: 1) Behavioral Modelling
+
+	   	      2) Dataflow Modelling
+
+
+
+Brief description about code:
+
+
+		All outputs of the code are generated in the respective VCD file. This code is used to check for several conditions like Full, Empty, Overflow, Underflow of the FIFO memory.
+ It is important to note that read and write pointers point to the same memory location 
+at both full and empty conditions. Therefore, in order to differentiate between the two, one 
+extra bit is added to read and write pointers. For example if a FIFO has depth of 256 then 
+	to span it completely 8-bits will be needed. Therefore with one extra bit read and write pointers will be of 9-bits. When their lower 8-bits point to same memory location their MSBs 
+are used to ascertain whether it is a full condition or empty condition. In empty conditions 
+the MSBs are equal whereas in full conditionMSBs are different.
+
+
+
+Brief Functionalities:
+
+	
+
+1. Initially, the FIFO memory is empty and Empty signal is high.
+	
+2. When Write signal is enabled, data can be written into the memory provided it isn't full.
+	
+3. If we continue entering data into the memory, data will be stored in FIFO manner.
+	
+4. Once the FIFO memory is full, Full signal will be high. If we try to write data, Overflow signal will be triggered.
+	
+5. To read data from FIFO, we enable the read signal which gives out the data that was entered first.
+	
+6. We can continue to read data from memory until it becomes empty.
+	
+7. Once the FIFO is empty, Empty signal will be high. Now, if we try to read data Underflow signal will be triggered.
+	
+8. Overall, the data entered or removed follows the FIFO fashion.
+	
+
+
+Applications: 
+	
+
+1. FIFO is used for synchronization purposes in computer and CPU hardware. FIFO is generally implemented as a circular queue, and thus has a read pointer and a write pointer.
+	
+2. FIFO is used when a resource is shared among multiple consumers. Examples include CPU scheduling, Disk Scheduling.
+	
+3. It is used when data is transferred asynchronously (data not necessarily received at same rate as sent) between two processes. Examples include IO Buffers, pipes, file IO, etc.
+	   
+
+
+Submitted By:
+	
+      Ishaan R Dharamdas	(16CO117)
+	
+      Praveen Naik S		(16CO133)
+
